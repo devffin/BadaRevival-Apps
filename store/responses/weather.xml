@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adc_database>
+  <units>C</units>
+  <local>
+    <city>Paris</city>
+    <time>18:30</time>
+  </local>
+  <currentconditions>
+    <obsdate>17/11/2026</obsdate>
+    <time>18:30</time>
+    <temperature>18</temperature>
+    <weathericon>6</weathericon>
+  </currentconditions>
+  <forecast>
+    <day code="6">
+      <daycode>6</daycode>
+      <daytime>Éclaircies</daytime>
+      <nighttime>Ciel dégagé</nighttime>
+      <hightemperature>20</hightemperature>
+      <lowtemperature>11</lowtemperature>
+      <sunrise>07:32</sunrise>
+      <sunset>17:44</sunset>
+    </day>
+    <day code="7">
+      <daycode>7</daycode>
+      <daytime>Nuageux</daytime>
+      <nighttime>Nuageux</nighttime>
+      <hightemperature>19</hightemperature>
+      <lowtemperature>10</lowtemperature>
+      <sunrise>07:34</sunrise>
+      <sunset>17:42</sunset>
+    </day>
+    <day code="3">
+      <daycode>3</daycode>
+      <daytime>Ensoleillé</daytime>
+      <nighttime>Ciel dégagé</nighttime>
+      <hightemperature>21</hightemperature>
+      <lowtemperature>9</lowtemperature>
+      <sunrise>07:36</sunrise>
+      <sunset>17:40</sunset>
+    </day>
+    <day code="12">
+      <daycode>12</daycode>
+      <daytime>Averses</daytime>
+      <nighttime>Pluie</nighttime>
+      <hightemperature>16</hightemperature>
+      <lowtemperature>8</lowtemperature>
+      <sunrise>07:38</sunrise>
+      <sunset>17:38</sunset>
+    </day>
+    <day code="6">
+      <daycode>6</daycode>
+      <daytime>Éclaircies</daytime>
+      <nighttime>Ciel dégagé</nighttime>
+      <hightemperature>18</hightemperature>
+      <lowtemperature>7</lowtemperature>
+      <sunrise>07:40</sunrise>
+      <sunset>17:36</sunset>
+    </day>
+    <day code="2">
+      <daycode>2</daycode>
+      <daytime>Partiellement nuageux</daytime>
+      <nighttime>Ciel dégagé</nighttime>
+      <hightemperature>17</hightemperature>
+      <lowtemperature>8</lowtemperature>
+      <sunrise>07:42</sunrise>
+      <sunset>17:34</sunset>
+    </day>
+    <day code="1">
+      <daycode>1</daycode>
+      <daytime>Ensoleillé</daytime>
+      <nighttime>Ciel dégagé</nighttime>
+      <hightemperature>19</hightemperature>
+      <lowtemperature>10</lowtemperature>
+      <sunrise>07:44</sunrise>
+      <sunset>17:32</sunset>
+    </day>
+  </forecast>
+</adc_database>

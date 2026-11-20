@@ -1,0 +1,11 @@
+<response id="{{id}}" name="{{name}}" returnCode="0" transactionId="{{tid}}">
+<totalCount>1</totalCount><startNum>0</startNum><endNum>1</endNum>
+<list totalCount="1" startNum="0" endNum="1">
+<value GUID="1000000001" version="1.0.0" contentType="application" loadType="0" functionId="0" productID="1000000001" productName="Test BadaRevival" productImgUrl="http://192.168.1.21/i/test1.png">
+<GUID>1000000001</GUID><version>1.0.0</version><contentType>application</contentType>
+<loadType>0</loadType><functionId>0</functionId><productID>1000000001</productID>
+<productName>Test BadaRevival</productName>
+<productImgUrl>http://192.168.1.21/i/test1.png</productImgUrl>
+</value>
+</list>
+</response>

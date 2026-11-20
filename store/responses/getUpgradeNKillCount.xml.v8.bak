@@ -1,0 +1,10 @@
+<response id="{{id}}" name="{{name}}" returnCode="0" transactionId="{{tid}}">
+<totalCount>0</totalCount><startNum>0</startNum><endNum>0</endNum>
+<UpgradeCount>0</UpgradeCount><KillCount>0</KillCount><Timer>0</Timer>
+<upgrade>N</upgrade><contentSizeLimitation>0</contentSizeLimitation>
+<freeStoreClsf>N</freeStoreClsf><clientType>0</clientType>
+<odcUrl>http://192.168.1.21/ods.as</odcUrl><odcSize>0</odcSize>
+<bdUrl>http://192.168.1.21/bd</bdUrl><bdSize>0</bdSize>
+<param name="2gLimit">0</param><param name="25gLimit">0</param>
+<param name="3gLimit">0</param><param name="wifiLimit">0</param>
+</response>

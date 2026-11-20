@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bada Revival - test</title>
+<style type="text/css">
+body { margin: 0; padding: 6px; background: #ffffff; color: #111111;
+       font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+h1 { font-size: 17px; margin: 0 0 6px 0; padding: 4px; background: #1b3a5c; color: #ffffff; }
+h2 { font-size: 14px; margin: 10px 0 4px 0; color: #1b3a5c;
+     border-bottom: 1px solid #1b3a5c; padding-bottom: 2px; }
+table { width: 100%; border-collapse: collapse; }
+td { padding: 2px 3px; vertical-align: top; font-size: 13px; }
+td.k { width: 38%; color: #444444; }
+td.v { font-weight: bold; }
+a.big { display: block; margin: 5px 0; padding: 7px; background: #e8eef5;
+        border: 1px solid #1b3a5c; color: #1b3a5c; text-decoration: none;
+        font-weight: bold; font-size: 14px; }
+.note { font-size: 12px; color: #555555; margin: 6px 0; }
+.ok { color: #0a7a2f; }
+.ko { color: #a10000; }
+#head { font-size: 12px; color: #666666; }
+</style>
+</head>
+<body>
+
+<h1>Bada Revival &mdash; test</h1>
+<div id="head">Samsung Wave Y GT-S5380 &middot; page de diagnostic</div>
+
+<h2>1. Ce que le navigateur annonce</h2>
+<table>
+<tr><td class="k">JavaScript</td><td class="v" id="js">...</td></tr>
+<tr><td class="k">&Eacute;cran</td><td class="v" id="scr">...</td></tr>
+<tr><td class="k">Fen&ecirc;tre</td><td class="v" id="win">...</td></tr>
+<tr><td class="k">Cookies</td><td class="v" id="ck">...</td></tr>
+<tr><td class="k">XHR (ajax)</td><td class="v" id="xhr">...</td></tr>
+<tr><td class="k">Navigateur</td><td class="v" id="ua" style="font-weight:normal;font-size:11px;">...</td></tr>
+</table>
+
+<h2>2. Liens de test</h2>
+<a class="big" href="/probe">Tester l'aller-retour serveur</a>
+<a class="big" href="https://pc1go.duckdns.org:41000/">Tester HTTPS (certificat)</a>
+<a class="big" href="http://192.168.1.21:8080/">Recharger cette page</a>
+
+<p class="note">
+Le deuxi&egrave;me lien teste si le navigateur accepte un certificat
+Let's Encrypt r&eacute;cent. Un message d'alerte de s&eacute;curit&eacute; est
+une information utile, pas un danger&nbsp;: ne valide rien, reviens en arri&egrave;re.
+</p>
+
+<h2>3. R&eacute;sultat</h2>
+<p class="note" id="verdict">En attente du script...</p>
+
+<script type="text/javascript">
+function set(id, txt, ok) {
+  var e = document.getElementById(id);
+  if (!e) { return; }
+  e.innerHTML = txt;
+  if (ok === true) { e.className = "v ok"; }
+  if (ok === false) { e.className = "v ko"; }
+}
+try {
+  set("js", "actif", true);
+} catch (e) {}
+
+try {
+  set("scr", screen.width + " x " + screen.height, true);
+} catch (e) { set("scr", "indisponible", false); }
+
+try {
+  set("win", window.innerWidth + " x " + window.innerHeight, true);
+} catch (e) { set("win", "indisponible", false); }
+
+try {
+  document.cookie = "brtest=1; path=/";
+  set("ck", document.cookie.indexOf("brtest=1") >= 0 ? "acceptes" : "refuses", 
+      document.cookie.indexOf("brtest=1") >= 0);
+} catch (e) { set("ck", "erreur", false); }
+
+try {
+  set("xhr", (typeof XMLHttpRequest != "undefined") ? "disponible" : "absent",
+      (typeof XMLHttpRequest != "undefined"));
+} catch (e) { set("xhr", "erreur", false); }
+
+try {
+  set("ua", navigator.userAgent);
+} catch (e) { set("ua", "indisponible"); }
+
+try {
+  var v = "Test termine. Si tu lis ceci, le navigateur execute du JavaScript.";
+  if (navigator.cookieEnabled === false) { v += " Cookies signales desactives."; }
+  set("verdict", v, true);
+} catch (e) {}
+</script>
+
+<noscript>
+<p class="note ko">JavaScript d&eacute;sactiv&eacute; ou non support&eacute; :
+c'est en soi un r&eacute;sultat important, note-le.</p>
+</noscript>
+
+</body>
+</html>

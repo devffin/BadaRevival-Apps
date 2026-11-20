@@ -1,0 +1,33 @@
+# Bada Revival - carte de redirection DNS du banc de test.
+#
+# Format : une entree par ligne, "nom=ip" ou "nom ip". "#" pour commenter.
+# Ce fichier est relu a chaud par dnsprobe.py : une modification prend effet
+# a la requete suivante, sans redemarrage.
+#
+# POURQUOI CETTE LISTE EST COURTE
+# -------------------------------
+# Ne rediriger QUE les hotes que le banc sait reellement servir. Un hote
+# redirige sans service derriere provoque un RST immediat, et le client
+# bada 2.0 le traduit par "Reseau non disponible".
+#
+# Exception : www.ospserver.net est desormais servi par mock.py, qui ecoute
+# aussi sur le port 443 (TLS si le client negocie TLS, HTTP clair sinon).
+# C'est l'hote des documents 2306 (checkAppUpgrade) et 5060
+# (termInformation, texte des Conditions generales).
+#
+# Hotes indispensables au flux Samsung Apps (POST /ods.as en HTTP).
+fr-bou.samsungapps.com=192.168.1.21
+hub-odc.samsungapps.com=192.168.1.21
+# Pages web et images servies par le banc (Conditions generales, vignettes).
+www.samsungapps.com=192.168.1.21
+samsungapps.com=192.168.1.21
+static.bada.com=192.168.1.21
+img.samsungapps.com=192.168.1.21
+zirconia.samsungapps.com=192.168.1.21
+# Documents OSP : 2306 et 5060 (port 443, TLS ou HTTP clair).
+www.ospserver.net=192.168.1.21
+#
+# Volontairement NON rediriges (laisses au resolveur reel) :
+#   gld.push.samsungosp.com    -> push 5223, aucun service chez nous
+#   samsungshp.vlingo.com      -> reconnaissance vocale, sans interet ici
+#   opt.samsungadhub.com       -> publicite, sans interet ici
